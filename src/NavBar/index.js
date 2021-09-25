@@ -1,9 +1,15 @@
-import React, { useState, useContext } from 'react'
-import { useHistory } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import {Header} from '../styles'
 
 function NavBar(){
+
     return(
-        <p>NavBar</p>
+        <Header>
+        <NavLink to='/landing'>Home</NavLink>
+        <NavLink to='/addartwork'>Add Work</NavLink>
+        <NavLink to='/artwork'>Artwork</NavLink>
+        <NavLink to='/test'>Damian Test</NavLink>
+        </Header>
     )
 }
 
