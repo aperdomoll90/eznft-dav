@@ -10,15 +10,20 @@ align-items: center;
 justify-content: center;
 `;
 
-export const Header = styled.div`
+export const ContentBox = styled.div`
 width: 95vw;
-height: 7vh;
-border-radius: 25px;
+height: 88vh;
+overflow: scroll;
 position: absolute;
-top:2%;
+bottom:2%;
 display: flex;
+overflow: scroll;
+flex-wrap: wrap;
 flex-direction: row;
 align-items: center;
 justify-content: space-around;
-background-color: #abebd4b4;
 `;
+
+
+
+

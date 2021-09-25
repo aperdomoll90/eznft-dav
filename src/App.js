@@ -16,7 +16,7 @@ function App() {
   const [user, setUser] = useState()
   return (
     <UserContext.Provider value={{ user, setUser}}>
-    <Body className="App">
+    <Body >
       <Router>
       <NavBar/>
       <Switch>

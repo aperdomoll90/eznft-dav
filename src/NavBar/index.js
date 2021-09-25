@@ -1,15 +1,15 @@
 import { NavLink } from 'react-router-dom'
-import {Header} from '../styles'
+import './style.css'
 
 function NavBar(){
 
     return(
-        <Header>
+        <div class='header'>
         <NavLink to='/landing'>Home</NavLink>
         <NavLink to='/addartwork'>Add Work</NavLink>
         <NavLink to='/artwork'>Artwork</NavLink>
         <NavLink to='/test'>Damian Test</NavLink>
-        </Header>
+        </div>
     )
 }
 

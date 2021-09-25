@@ -1,0 +1,10 @@
+.ArtCards {
+  width: 30vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+  margin-top: 2%;
+}
