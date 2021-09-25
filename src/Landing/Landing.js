@@ -1,16 +1,29 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+import { ContentBox, AddButton } from '../styles'
+import ArtCard from '../Components/ArtCard'
+import './style.css'
 
+function Landing() {
+  let history = useHistory()
+  const [artWorkList, setArtWorkList] = useState()
 
-function Landing(){
-    let history = useHistory()
-    return(
-        <>
-        <p onClick={() => history.push('/addartwork')}>Add Work</p>
-        <p onClick={() => history.push('/artwork')}>Artwork</p>
-        <p onClick={() => history.push('/test')}>Damian Test</p>
-        </>
-    )
+  useEffect(() => {
+    fetch(`https://eznft-api.web.app`)
+      .then(res => res.json())
+      .then(data => setArtWorkList(data))
+      .catch(err => console.log(err))
+  }, [])
+
+  return (
+    <ContentBox>
+        {console.log(artWorkList)}
+      {/* {artWorkList.map(art => (
+        <ArtCard info={art} />
+      ))} */}
+      <div class='AddButton' onClick={() => history.push('/addartwork')} />
+    </ContentBox>
+  )
 }
 
 export default Landing
