@@ -18,7 +18,7 @@ function Landing() {
   return (
     <ContentBox>
         {console.log(artWorkList)}
-      {artWorkList.map(art => (
+      {artWorkList &&  artWorkList.map(art => (
         <ArtCard key={art.id} info={art} />
       ))}
       <div class='AddButton' onClick={() => history.push('/addartwork')} ><p>+</p></div>

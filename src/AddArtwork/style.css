@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
+ 
 }
 .thrdRow {
   height: 10%;
@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
+ 
 }
 .fthRow {
   height: 35%;
@@ -43,7 +43,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
+ 
 }
 .FftRow {
   height: 10%;
@@ -53,7 +53,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  background-color: #fff;
+ 
 }
 
 .button{
@@ -64,51 +64,60 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(55, 0, 255);
+
 }
 
 .descriptionField{
     height: 95%;
     width: 75%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: left;
     justify-content: center;
-    background-color: rgb(55, 0, 255);
+
 }
 
 .signatureField{
     height: 95%;
     width: 24%;
     display: flex;
+    flex-direction: column;
+    align-items: left;
     align-items: center;
     justify-content: center;
-    background-color: rgb(55, 0, 255);
+
 }
 .streetField{
     height: 95%;
     width: 55%;
     display: flex;
+    flex-direction: column;
+    align-items: left;
     align-items: center;
     justify-content: center;
-    background-color: rgb(55, 0, 255);
+
 }
 
 .cityField{
     height: 95%;
     width: 20%;
     display: flex;
+    flex-direction: column;
+    align-items: left;
     align-items: center;
     justify-content: center;
-    background-color: rgb(55, 0, 255);
+
 }
 
 .zipField{
     height: 95%;
     width: 10%;
     display: flex;
+    flex-direction: column;
+    align-items: left;
     align-items: center;
     justify-content: center;
-    background-color: rgb(55, 0, 255);
+
 }
 
 .artNameField{
@@ -117,7 +126,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(55, 0, 255);
+
 }
 
 .artPriceField{
@@ -126,7 +135,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(55, 0, 255);
+
 }
 
 .artQntyField{
@@ -135,5 +144,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(55, 0, 255);
+
+}
+
+.input{
+    height: 90%;
+    width: 98%;
 }
