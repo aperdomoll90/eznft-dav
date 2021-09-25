@@ -1,0 +1,139 @@
+.table {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  overflow: scroll;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: blue; */
+}
+
+.frstRow {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: .5%;
+  background-color: rgba(255, 255, 255, 0.452);
+}
+.scndRow {
+  height: 10%;
+  width: 100%;
+  margin-top: .5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.thrdRow {
+  height: 10%;
+  width: 100%;
+  margin-top: .5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.fthRow {
+  height: 35%;
+  width: 100%;
+  margin-top: .5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.FftRow {
+  height: 10%;
+  width: 100%;
+  margin-top: .5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #fff;
+}
+
+.button{
+    height: 95%;
+    width: 10%;
+    margin-right: 1%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(55, 0, 255);
+}
+
+.descriptionField{
+    height: 95%;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(55, 0, 255);
+}
+
+.signatureField{
+    height: 95%;
+    width: 24%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(55, 0, 255);
+}
+.streetField{
+    height: 95%;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(55, 0, 255);
+}
+
+.cityField{
+    height: 95%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(55, 0, 255);
+}
+
+.zipField{
+    height: 95%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(55, 0, 255);
+}
+
+.artNameField{
+    height: 95%;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(55, 0, 255);
+}
+
+.artPriceField{
+    height: 95%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(55, 0, 255);
+}
+
+.artQntyField{
+    height: 95%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(55, 0, 255);
+}

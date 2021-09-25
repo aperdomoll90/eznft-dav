@@ -12,7 +12,7 @@ justify-content: center;
 
 export const ContentBox = styled.div`
 width: 95vw;
-height: 88vh;
+height: 90vh;
 overflow: scroll;
 position: absolute;
 bottom:2%;
