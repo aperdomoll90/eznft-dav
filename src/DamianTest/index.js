@@ -24,7 +24,11 @@ function DamianTest(){
     return(
         <>
          {userSession?.isUserSignedIn() ? "OMG Welcome user: "+userSession?.loadUserData().identityAddress :  
-        <Button onClick={() => authenticate()}>Authenticate</Button>}
+        <div>
+            <Button onClick={() => authenticate()}>Connect your Hiro  Wallet</Button>
+            <p>If you don't know about the Hiro Wallet Go to: <a href="https://www.hiro.so/wallet">Hiro.so</a></p>
+        </div>
+        }
         </>
     )
 }
