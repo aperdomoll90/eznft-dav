@@ -4,9 +4,10 @@ import Landing from './Landing/Landing.js'
 import Artwork from './Artwork/Artwork.js'
 import AddArtwork from './AddArtwork/AddArtwork.js'
 import DamianTest from './DamianTest'
+import NavBar from './NavBar'
 
 
-import {Header, Body} from './styles'
+import {Body} from './styles'
 import './App.css';
 
 export const UserContext = createContext(null)
@@ -16,8 +17,8 @@ function App() {
   return (
     <UserContext.Provider value={{ user, setUser}}>
     <Body className="App">
-      <Header/>
       <Router>
+      <NavBar/>
       <Switch>
             <Route path='/test' component={DamianTest} />
             <Route path='/addartwork' component={AddArtwork} />
