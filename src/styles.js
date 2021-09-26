@@ -11,11 +11,11 @@ justify-content: center;
 `;
 
 export const ContentBox = styled.div`
-width: 95vw;
-height: 90vh;
+width: 80vw;
+height: 93vh;
 overflow: scroll;
 position: absolute;
-bottom:2%;
+bottom:0%;
 display: flex;
 overflow: scroll;
 flex-wrap: wrap;
