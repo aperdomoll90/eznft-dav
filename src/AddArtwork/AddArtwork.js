@@ -20,7 +20,6 @@ function AddArtwork() {
 
      const handleSubmit = () => {
           const functionArgs = []
-
           const options = {
                contractAddress: 'ST3VMN4221GKGGFV2WJHW64RGJNKP1Y00KPGVBZC8',
                contractName: 'eznft-bocacode',
@@ -28,7 +27,7 @@ function AddArtwork() {
                functionArgs,
                appDetails: {
                     name: 'ez  NFT',
-                    icon: window.location.origin + '/my-app-logo.svg',
+                    icon: window.location.origin + '/eznft-logo.png',
                },
                onFinish: data => {
                     console.log('data', data)
@@ -40,9 +39,7 @@ function AddArtwork() {
                          body: JSON.stringify(newArt),
                     })
                          .then(response => {
-                             // if (response.status == 200) {
-                                   history.push('/');
-                             // }
+                              history.push('/')
                          })
                          .catch(err => console.log(err))
                },
@@ -52,19 +49,16 @@ function AddArtwork() {
           //      console.log('answer:', answer)
           // })
           fetch(`https://eznft-api.web.app/artwork`, {
-            // fetch(`http://localhost:5000/artwork`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            mode: 'no-cors',
-            body: JSON.stringify(newArt),
+               // fetch(`http://localhost:5000/artwork`, {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               mode: 'no-cors',
+               body: JSON.stringify(newArt),
           })
-            .then(response => {
-                 if (response.status == 200) {
-                      history.push('/')
-                 }
-            })
-            .catch(err => console.log(err))
-
+               .then(response => {
+                    history.push('/')
+               })
+               .catch(err => console.log(err))
      }
 
      return (
@@ -148,7 +142,6 @@ function AddArtwork() {
                                    variant="contained"
                                    size="large"
                                    color="warning"
-
                                    onClick={() => handleSubmit()}
                               >
                                    Create NFT
