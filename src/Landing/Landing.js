@@ -9,7 +9,7 @@ function Landing() {
   const [artWorkList, setArtWorkList] = useState()
 
   useEffect(() => {
-    fetch(`https://eznft-api.web.app`)
+    fetch(`https://eznft-api.web.app/artwork`)
       .then(res => res.json())
       .then(data => setArtWorkList(data))
       .catch(err => console.log(err))
@@ -18,10 +18,10 @@ function Landing() {
   return (
     <ContentBox>
         {console.log(artWorkList)}
-      {/* {artWorkList.map(art => (
-        <ArtCard info={art} />
-      ))} */}
-      <div class='AddButton' onClick={() => history.push('/addartwork')} />
+      {artWorkList &&  artWorkList.map(art => (
+        <ArtCard key={art.id} info={art} />
+      ))}
+      <div class='AddButton' onClick={() => history.push('/addartwork')} ><p>+</p></div>
     </ContentBox>
   )
 }

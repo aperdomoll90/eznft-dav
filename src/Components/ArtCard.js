@@ -7,7 +7,13 @@ function ArtCard({info}){
     let history = useHistory()
     return(
         <div class='ArtCards'>
-       <p>{info.name}</p>
+       <img src={info.image_url}/>
+       <p>{info.art_name}</p>
+       <p>{info.artist_name}</p>
+       <p>{info.description}</p>
+       <p>{info.price}</p>
+       <p>{info.location}</p>
+
         </div>
     )
 }
