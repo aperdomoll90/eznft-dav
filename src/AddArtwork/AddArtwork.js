@@ -5,10 +5,10 @@ import './style.css'
 
 function AddArtwork() {
      const [newArt, setNewArt] = useState()
-     const [photoUrl, setPhotoUrl] = useState()
      const handleUpload = file => {
-          uploadFile(file).then(publicUrl => {
-               setPhotoUrl(publicUrl)
+          uploadFile(file).then(photoUrl => {
+               setPhotoUrl(photoUrl)
+               setNewArt({ ...newArt, photoUrl })
           })
      }
      return (
