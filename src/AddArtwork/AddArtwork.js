@@ -1,28 +1,25 @@
-import { useCallback, useState } from "react";
-import { useDropzone } from "react-dropzone";
-import { useHistory } from "react-router-dom";
+import { useState } from "react";
 import { uploadFile } from "../utils";
-import "./style.css";
 import { ContentBox } from "../styles";
+import "./style.css";
 
 function AddArtwork() {
-  let history = useHistory();
   const [newArt, setNewArt] = useState();
-  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
-    onDrop: (files) => {
-      // console.log(files)
-      files.forEach((file) => uploadFile(file));
-    },
-  });
+  const handleUpload = (file) => {
+    uploadFile(file).then((photoUrl) => {
+      setNewArt({ ...newArt, photoUrl });
+    });
+  };
   return (
     <ContentBox>
       <div class="table">
         <div class="frstRow">
           <section className="container">
-            <div {...getRootProps({ className: "dropzone" })}>
-              <input {...getInputProps()} />
-              <p>Drag 'n' drop some files here, or click to select files</p>
-            </div>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => handleUpload(e.target.value)}
+            />
           </section>
         </div>
         <div class="scndRow">
@@ -35,28 +32,48 @@ function AddArtwork() {
             <label>Street</label>
             <input
               class="input"
-              onChange={(e) => setNewArt({ ...newArt, street: e.target.value })}
+              onChange={(e) =>
+                setNewArt({
+                  ...newArt,
+                  street: e.target.value,
+                })
+              }
             />
           </div>
           <div class="cityField">
             <label>city</label>{" "}
             <input
               class="input"
-              onChange={(e) => setNewArt({ ...newArt, city: e.target.value })}
+              onChange={(e) =>
+                setNewArt({
+                  ...newArt,
+                  city: e.target.value,
+                })
+              }
             />
           </div>
           <div class="zipField">
             <label>state</label>
             <input
               class="input"
-              onChange={(e) => setNewArt({ ...newArt, state: e.target.value })}
+              onChange={(e) =>
+                setNewArt({
+                  ...newArt,
+                  state: e.target.value,
+                })
+              }
             />
           </div>
           <div class="zipField">
             <label>zip</label>
             <input
               class="input"
-              onChange={(e) => setNewArt({ ...newArt, zip: e.target.value })}
+              onChange={(e) =>
+                setNewArt({
+                  ...newArt,
+                  zip: e.target.value,
+                })
+              }
             />
           </div>
         </div>
@@ -65,7 +82,10 @@ function AddArtwork() {
             <label>Comment here</label>
             <textarea
               onChange={(e) =>
-                setNewArt({ ...newArt, description: e.target.value })
+                setNewArt({
+                  ...newArt,
+                  description: e.target.value,
+                })
               }
               class="descriptionTextarea"
               rows="9"

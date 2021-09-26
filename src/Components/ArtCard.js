@@ -1,7 +1,4 @@
-import { Button } from "@blockstack/ui";
-import React, { useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArtCards } from "../styles";
 import "./style.css";
 
 function ArtCard({ info }) {
