@@ -6,8 +6,14 @@ import { useParams } from "react-router-dom";
 import ArtCard from "../Components/ArtCard";
 import { ContentBox } from "../styles";
 import { uintCV } from '@stacks/transactions';
+import { userSession } from '../auth';
 
 function BuyNFC(ArtID,NFTID) {
+  if  (!userSession?.isUserSignedIn()) {
+     alert("Please install the Hiro.so Wallet");
+     return;
+  }
+  try  {
   console.log("Buy")
   const functionArgs = [
       uintCV(15),
@@ -42,6 +48,9 @@ function BuyNFC(ArtID,NFTID) {
      openContractCall(options).then(answer =>  {
          console.log("answer:",answer)
      });
+    } catch (ex) {
+      alert("Please install Hiro.so wallet!")
+    }
 }
 
 function Artwork() {
