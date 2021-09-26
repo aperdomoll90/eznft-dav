@@ -54,17 +54,16 @@ function BuyNFC(ArtID,NFTID) {
 }
 
 function Artwork() {
-  const { id } = useParams();
-  const [artWorkById, setArtWorkById] = useState();
+  const { id } = useParams()
+  const [artWorkById, setArtWorkById] = useState()
 
   useEffect(() => {
     fetch(`https://eznft-api.web.app/artwork/${id}`)
-      .then((res) => res.json())
-      .then((data) => setArtWorkById(data))
-      .catch((err) => console.log(err));
-  }, [id]);
+      .then(res => res.json())
+      .then(data => setArtWorkById(data))
+      .catch(err => console.log(err))
+  }, [id])
 
-  console.log(artWorkById);
   return (
     <ContentBox>
       <div>
@@ -79,7 +78,7 @@ function Artwork() {
             Buy NFT</Button>
       </div>
     </ContentBox>
-  );
+  )
 }
 
-export default Artwork;
+export default Artwork
