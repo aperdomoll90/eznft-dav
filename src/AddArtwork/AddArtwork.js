@@ -1,16 +1,30 @@
-import React, { useState, useContext } from 'react'
+import { useCallback, useState } from 'react'
+import { useDropzone } from 'react-dropzone'
 import { useHistory } from 'react-router-dom'
+import { uploadFile } from '../utils'
 import './style.css'
 import { ContentBox } from '../styles'
-
 
 function AddArtwork(){
     let history = useHistory()
     const [newArt, setNewArt]=useState()
+    const {acceptedFiles, getRootProps, getInputProps} = useDropzone({
+        onDrop: files => {
+            // console.log(files)
+            files.forEach(file => uploadFile(file))
+        }
+    })
     return(
         <ContentBox >
             <div class='table'>
-<div class='frstRow'></div>
+<div class='frstRow'>
+<section className="container">
+        <div {...getRootProps({className: 'dropzone'})}>
+          <input {...getInputProps()} />
+          <p>Drag 'n' drop some files here, or click to select files</p>
+        </div>
+      </section>
+</div>
 <div class='scndRow'>
 <div class='artNameField'></div>
 <div class='artPriceField'></div>
@@ -36,13 +50,9 @@ function AddArtwork(){
 
 
             </div>
-            
-            
 
         </ContentBox>
-   
-
-    )
+    ) 
 }
 
 export default AddArtwork
