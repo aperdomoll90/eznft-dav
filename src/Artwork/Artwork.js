@@ -6,13 +6,13 @@ import { useParams } from "react-router-dom";
 import ArtCard from "../Components/ArtCard";
 import { ContentBox } from "../styles";
 import { uintCV } from '@stacks/transactions';
-import { userSession } from '../auth';
+// import { userSession } from '../auth';
 
 function BuyNFC(ArtID,NFTID) {
-  if  (!userSession?.isUserSignedIn()) {
-     alert("Please install the Hiro.so Wallet");
-    //  return;
-  }
+  // if  (!userSession?.isUserSignedIn()) {
+  //    alert("Please install the Hiro.so Wallet");
+  //   //  return;
+  // }
   try  {
   console.log("Buy")
   const functionArgs = [
@@ -35,19 +35,32 @@ function BuyNFC(ArtID,NFTID) {
         console.log('Transaction ID:', data.txId);
         console.log('Raw transaction:', data.txRaw);
         fetch(`https://eznft-api.web.app/buy`, {
-          // fetch(`http://localhost:5000/artwork`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             mode: 'no-cors',
-            body: JSON.stringify({artId:ArtID,userId:"Damian",nfcId:NFTID}),
+            body: JSON.stringify({artId:ArtID,userId:"Damian",nftId:NFTID}),
           })
-            .then(() => alert("Congratulations! You're the owner!"))
+            .then((response) => {
+              if (response.status == 200) {alert("Congratulations! You're the owner!")}
+            })
             .catch(err => console.log(err))
       },
     };
     //  openContractCall(options).then(answer =>  {
     //      console.log("answer:",answer)
     //  });
+    // fetch(`https://eznft-api.web.app/buy`, {
+    fetch(`http://localhost:5000/buy`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      mode: 'no-cors',
+      body: JSON.stringify({artId:ArtID,userId:"plop",nftId:NFTID}),
+    })
+      .then(() => {
+        alert("Congratulations! You're the owner!");
+      })
+      .catch(err => console.log(err))
+
     } catch (ex) {
       alert("Please install Hiro.so wallet!")
     }
@@ -74,7 +87,7 @@ function Artwork() {
             size="large"
             color="warning"
             className={"MuiButton-root MuiButton-contained MuiButton-containedWarning MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-zm37py-MuiButtonBase-root-MuiButton-root"}
-           onClick={BuyNFC(artWorkById,15)}>
+           onClick={()=> BuyNFC(id,'!!someBlockChainCode!!')}>
             Buy NFT</Button>
       </div>
     </ContentBox>
