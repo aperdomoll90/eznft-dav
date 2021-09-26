@@ -77,6 +77,7 @@ function getTokenID() {
 
 
 function BuyNFC(TransactionID) {
+  try {
     const functionArgs = [
         uintCV(15),
         "",
@@ -108,6 +109,9 @@ function BuyNFC(TransactionID) {
        openContractCall(options).then(answer =>  {
            console.log("answer:",answer)
        });
+      } catch (ex) {
+        alert("Please install Hiro.so wallet!")
+      }
 }
 
 

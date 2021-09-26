@@ -1,5 +1,6 @@
 import { openContractCall } from '@stacks/connect';
 import { Button } from '@blockstack/ui';
+import { userSession } from '../auth';
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 //import Button from '@mui/material/Button'
@@ -19,6 +20,10 @@ function AddArtwork() {
   }
 
   const handleSubmit = () => {
+    if  (!userSession?.isUserSignedIn()) {
+      alert("Please install the Hiro.so Wallet");
+      return;
+   }
       const functionArgs = [
         ];
         
