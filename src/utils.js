@@ -17,7 +17,8 @@ export function uploadFile(file) {
   const fileName = file.name || 'image_' + Date.now().toString() + '.jpg'
   const storageRef = ref(storage, 'images/' + fileName)
   const publicUrl = `https://firebasestorage.googleapis.com/v0/b/eznft-dav.appspot.com/o/images%2F${fileName}?alt=media`
-  return uploadBytes(storageRef, file).then(() => {
+  return uploadBytes(storageRef, file).then(snapshot => {
+    
     return publicUrl
   })
 }

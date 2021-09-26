@@ -7,14 +7,16 @@ import './style.css'
 function AddArtwork() {
   let history = useHistory()
   const [newArt, setNewArt] = useState()
-  const handleUpload = file => {
-    uploadFile(file).then(photoUrl => {
+  const handleUpload = (files) => {
+    console.log(files)
+    uploadFile(files[0]).then(photoUrl => {
       setNewArt({ ...newArt, image_url: photoUrl })
     })
   }
 
   const handleSubmit = () => {
     fetch(`https://eznft-api.web.app/artwork`, {
+    // fetch(`http://localhost:5000/artwork`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       mode: 'no-cors',
@@ -29,7 +31,7 @@ function AddArtwork() {
       <div class='table'>
         <section class='column'>
           <div className='pictureRow'>
-            <input type='file' accept='image/*' onChange={e => handleUpload(e.target.value)} />
+            <input type='file' accept='image/*' onChange={e => handleUpload(e.target.files)} />
           </div>
           
         </section>
