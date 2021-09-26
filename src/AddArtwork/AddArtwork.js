@@ -2,8 +2,7 @@ import { openContractCall } from '@stacks/connect';
 import { Button } from '@blockstack/ui';
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-//import Button from '@mui/material/Button'
-
+// import Button from '@mui/material/Button'
 import { uploadFile } from '../utils'
 import { ContentBox } from '../styles'
 import './style.css'

@@ -7,7 +7,6 @@ import ArtCard from "../Components/ArtCard";
 import { ContentBox } from "../styles";
 import { uintCV } from '@stacks/transactions';
 
-
 function BuyNFC(ArtID,NFTID) {
   console.log("Buy")
   const functionArgs = [
@@ -23,7 +22,7 @@ function BuyNFC(ArtID,NFTID) {
       functionArgs,
       appDetails: {
         name: 'ez  NFT',
-        icon: window.location.origin + '/my-app-logo.svg',
+        icon: window.location.origin + '/eznft-logo.png',
       },
       onFinish: data => {
         console.log('Stacks Transaction:', data.stacksTransaction);
@@ -38,12 +37,8 @@ function BuyNFC(ArtID,NFTID) {
           })
             .then(() => alert("Congratulations! You're the owner!"))
             .catch(err => console.log(err))
-
-
-        
       },
     };
-    
      openContractCall(options).then(answer =>  {
          console.log("answer:",answer)
      });
