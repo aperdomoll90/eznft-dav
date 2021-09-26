@@ -8,7 +8,7 @@ function ArtCard({ info }) {
   return (
     <Link to={path}>
       <div class="ArtCards">
-        <img src={info.image_url} />
+        <img alt={info.description} src={info.image_url} />
         <p>{info.art_name}</p>
         <p>{info.artist_name}</p>
         <p>{info.description}</p>

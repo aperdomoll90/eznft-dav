@@ -9,9 +9,21 @@ function AddArtwork() {
   const [newArt, setNewArt] = useState()
   const handleUpload = file => {
     uploadFile(file).then(photoUrl => {
-      setNewArt({ ...newArt, photoUrl })
+      setNewArt({ ...newArt, image_url: photoUrl })
     })
   }
+
+  const handleSubmit = () => {
+    fetch(`https://eznft-api.web.app/artwork`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      mode: 'no-cors',
+      body: JSON.stringify(newArt),
+    })
+      .then(() => history.push('/'))
+      .catch(err => console.log(err))
+  }
+
   return (
     <ContentBox>
       <div class='table'>
@@ -19,10 +31,7 @@ function AddArtwork() {
           <div className='pictureRow'>
             <input type='file' accept='image/*' onChange={e => handleUpload(e.target.value)} />
           </div>
-          <div class='infoField'>
-            <label>Provide a description of the piece here: </label>
-            <textarea rows='30' cols='80' onChange={e => setNewArt({ ...newArt, description: e.target.value })} class='descriptionTextarea' />
-          </div>
+          
         </section>
         <section class='column'>
           <div class='infoField'>
@@ -32,21 +41,20 @@ function AddArtwork() {
               <input class='smallInput' placeholder='  Quantity' onChange={e => setNewArt({ ...newArt, quantity: e.target.value })} />
             </div>
             <div class='singleRow'>
-              <input class='largeInput' placeholder='  Street Address' onChange={e => setNewArt({ ...newArt, street: e.target.value })} />
+              <input class='largeInput' placeholder='  Street Address' onChange={e => setNewArt({ ...newArt, location: e.target.value })} />
             </div>
-            <div class='tripleRow'>
-              <input class='input' placeholder='  City' onChange={e => setNewArt({ ...newArt, city: e.target.value })} />
-              <input class='input' placeholder='  State' onChange={e => setNewArt({ ...newArt, state: e.target.value })} />
-              <input class='input' placeholder='  Zip' onChange={e => setNewArt({ ...newArt, zip: e.target.value })} />
-            </div>
+          </div>
+          <div class='infoField'>
+            <label>Provide a description of the piece here: </label>
+            <textarea rows='30' cols='80' onChange={e => setNewArt({ ...newArt, description: e.target.value })} class='descriptionTextarea' />
           </div>
 
           <div class='buttonField'>
             <div class='button'>
               <p>+</p>
             </div>
-            <div class='button'>
-              <p>Sell</p>
+            <div class='button' onClick={handleSubmit} >
+              <p >Sell</p>
             </div>
           </div>
         </section>
