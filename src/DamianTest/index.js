@@ -1,15 +1,9 @@
 import {useContext} from 'react';
-import { Box, Text, Button } from '@blockstack/ui';
+import { Button } from '@blockstack/ui';
 import { authenticate,userSession } from '../auth';
-import { useHistory } from 'react-router-dom';
 import {UserContext} from  "../App";
 
-
 function DamianTest(){
-    let history = useHistory()
-    let state = {
-        userData: null,
-    }
     let {user,setUser} = useContext(UserContext);
     console.log(user);
     if  (userSession?.isUserSignedIn())
