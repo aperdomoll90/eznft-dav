@@ -1,0 +1,112 @@
+.table {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: scroll;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.column{
+    height: 97%;
+    width: 49%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+    padding-left: .5%;
+}
+
+.pictureRow {
+  height: 60vh;
+  width: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5%;
+  background-color: rgba(255, 255, 255, 0.452);
+}
+.infoField{
+    height: 28vh;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+    margin-top: 1%;
+    margin-top: 1%;
+  }
+
+  .tripleRow {
+    height: 15%;
+    width: 100%;
+    /* margin-left: 1%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .singleRow {
+    height: 15%;
+    width: 100%;
+    /* margin-left: 1%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+
+  /* Input fields */
+  .largeInput {
+    height: 98%;
+    width: 99%;
+  }
+  .mediumInput {
+    height: 98%;
+    width: 50%;
+  }
+  .smallInput {
+    height: 98%;
+    width: 15%;
+  }
+
+.descriptionField {
+    height: 65%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+  }
+  
+  .buttonField{
+      height: 10%;
+      width: 40%;
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      bottom: 2%;
+      right: 0%;
+  }
+  .button{
+    height: 65%;
+    width: 20%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: chartreuse;
+}
+
+  
+
+
+
+
+
+
+
+

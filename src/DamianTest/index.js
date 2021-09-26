@@ -1,7 +1,6 @@
-import {useContext } from 'react';
-import { Box, Text, Button } from '@blockstack/ui';
+import {useContext} from 'react';
+import { Button } from '@blockstack/ui';
 import { authenticate,userSession } from '../auth';
-import { useHistory } from 'react-router-dom';
 import {UserContext} from  "../App";
 import { StacksMainnet, StacksTestnet } from '@stacks/network';
 //import { makeSTXTokenTransfer } from '@stacks/transactions';
@@ -123,9 +122,7 @@ function BuyNFC(TransactionID) {
 
 
 
-
 function DamianTest(){
-
     let {user,setUser} = useContext(UserContext);
     //console.log(user);
     if  (userSession?.isUserSignedIn())

@@ -13,3 +13,31 @@ background-color: rgba(255, 255, 255, 0.534);
 .AddButton:hover {
     background-color: rgba(255, 255, 255, 0.774);
   }
+
+.columns{
+  height: 98%;
+  width: 65%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  flex-wrap:wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  /* background: yellow; */
+}
+.columnsLeft{
+  height: 98%;
+  width: 35%;
+  position: relative;
+  display: flex;
+  align-items:flex-end;
+  justify-content: flex-start;
+}
+
+.homeImage{
+  /* position: absolute;
+  bottom: 2%; */
+  height: 70%;
+  width: 100%;
+}

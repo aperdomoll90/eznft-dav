@@ -22,7 +22,7 @@ function App() {
       <Switch>
             <Route path='/test' component={DamianTest} />
             <Route path='/addartwork' component={AddArtwork} />
-            <Route path='/artwork' component={Artwork} />
+            <Route path='/artwork/:id' component={Artwork} />
             <Route path='/' component={Landing} />
           </Switch>
       </Router>
