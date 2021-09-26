@@ -11,11 +11,14 @@ const firebaseConfig = {
 }
 
 export function uploadFile(file) {
+  console.log(file)
   const firebaseApp = initializeApp(firebaseConfig)
   const storage = getStorage(firebaseApp)
-  const storageRef = ref(storage, file.name)
-  uploadBytes(storageRef, file).then((snapshot) => {
-    console.log('Uploaded a blob or file!', snapshot)
+  const fileName = file.name || Date.now().toString() + '.jpg'
+  const storageRef = ref(storage, 'images/' + fileName)
+  const publicUrl = `https://firebasestorage.googleapis.com/v0/b/eznft-dav.appspot.com/o/images%2F${fileName}?alt=media`
+  return uploadBytes(storageRef, file).then(() => {
+    return publicUrl
   })
 }
 
