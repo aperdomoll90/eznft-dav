@@ -38,7 +38,7 @@ function BuyNFC(ArtID,NFTID) {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             mode: 'no-cors',
-            body: JSON.stringify({artId:ArtID,userId:"Damian",nftId:NFTID}),
+            body: JSON.stringify({artId:ArtID,userId:"plop",nftId:NFTID}),
           })
             .then((response) => {
               if (response.status == 200) {alert("Congratulations! You're the owner!")}
@@ -49,8 +49,8 @@ function BuyNFC(ArtID,NFTID) {
     //  openContractCall(options).then(answer =>  {
     //      console.log("answer:",answer)
     //  });
-    // fetch(`https://eznft-api.web.app/buy`, {
-    fetch(`http://localhost:5000/buy`, {
+    fetch(`https://eznft-api.web.app/buy`, {
+    // fetch(`http://localhost:5000/buy`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       mode: 'no-cors',
