@@ -46,6 +46,11 @@ function AddArtwork() {
           </div>
           </div>
           
+          <div class='buttonField'>
+              <div class='button'><p>+</p></div>
+              <div class='button'><p>Sell</p></div>
+
+          </div>
         </section>
       </div>
     </ContentBox>
