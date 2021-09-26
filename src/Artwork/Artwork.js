@@ -11,7 +11,7 @@ import { userSession } from '../auth';
 function BuyNFC(ArtID,NFTID) {
   if  (!userSession?.isUserSignedIn()) {
      alert("Please install the Hiro.so Wallet");
-     return;
+    //  return;
   }
   try  {
   console.log("Buy")
@@ -45,9 +45,9 @@ function BuyNFC(ArtID,NFTID) {
             .catch(err => console.log(err))
       },
     };
-     openContractCall(options).then(answer =>  {
-         console.log("answer:",answer)
-     });
+    //  openContractCall(options).then(answer =>  {
+    //      console.log("answer:",answer)
+    //  });
     } catch (ex) {
       alert("Please install Hiro.so wallet!")
     }
