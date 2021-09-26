@@ -5,10 +5,11 @@ function ArtCard({ info }) {
   const location = useLocation();
   const path =
     location.pathname === "/landing" ? `/artwork/${info.id}` : "/landing";
+    const image =info.image_url
   return (
     <Link to={path}>
       <div class="ArtCards">
-        <img alt={info.description} src={info.image_url} />
+        <img class='imageSize' alt={info.description} src={image} />
         <p>{info.art_name}</p>
         <p>{info.artist_name}</p>
         <p>{info.description}</p>
