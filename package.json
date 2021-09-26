@@ -4,6 +4,10 @@
   "private": true,
   "dependencies": {
     "@blockstack/ui": "^2.12.14",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.0.1",
+    "@mui/material": "^5.0.1",
     "@stacks/connect": "^6.2.0",
     "@stacks/connect-react": "^13.0.0",
     "@stacks/profile": "^2.0.1",

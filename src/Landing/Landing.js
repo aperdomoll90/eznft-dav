@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+import Fab from '@mui/material/Fab';
+import AddIcon from '@mui/icons-material/Add';
 import { ContentBox } from '../styles'
 import ArtCard from '../Components/ArtCard'
 import './style.css'
@@ -19,13 +21,14 @@ function Landing() {
   return (
     <ContentBox>
       <div class='columnsLeft'>
-        <img class='homeImage' src={HomeImage}/>
+        <img class='homeImage' alt='' src={HomeImage}/>
       </div>
       <div class='columns'> {artWorkList && artWorkList.map(art => <ArtCard key={art.id} info={art} />)}</div>
 
-      <div class='AddButton' onClick={() => history.push('/addartwork')}>
-        <p>+</p>
-      </div>
+      <Fab color="default" aria-label="add" onClick={() => history.push('/addartwork')}>
+        <AddIcon />
+      </Fab>
+
     </ContentBox>
   )
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import Button from '@mui/material/Button'
 import { uploadFile } from '../utils'
 import { ContentBox } from '../styles'
 import './style.css'
@@ -52,12 +53,11 @@ function AddArtwork() {
           </div>
 
           <div class='buttonField'>
-            <div class='button'>
-              <p>+</p>
-            </div>
-            <div class='button' onClick={handleSubmit} >
-              <p >Sell</p>
-            </div>
+          <Button variant="contained"
+            size="large"
+            color="warning"
+           onClick={handleSubmit}>
+            Create NFT</Button>
           </div>
         </section>
       </div>
