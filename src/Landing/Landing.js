@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { ContentBox } from '../styles'
 import ArtCard from '../Components/ArtCard'
 import './style.css'
+import HomeImage from '../elements/HomeImage.png'
 
 function Landing() {
   let history = useHistory()
@@ -17,11 +18,14 @@ function Landing() {
 
   return (
     <ContentBox>
-        {console.log(artWorkList)}
-      {artWorkList &&  artWorkList.map(art => (
-        <ArtCard key={art.id} info={art} />
-      ))}
-      <div class='AddButton' onClick={() => history.push('/addartwork')} ><p>+</p></div>
+      <div class='columnsLeft'>
+        <img class='homeImage' src={HomeImage}/>
+      </div>
+      <div class='columns'> {artWorkList && artWorkList.map(art => <ArtCard key={art.id} info={art} />)}</div>
+
+      <div class='AddButton' onClick={() => history.push('/addartwork')}>
+        <p>+</p>
+      </div>
     </ContentBox>
   )
 }
