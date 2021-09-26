@@ -2094,22 +2094,7 @@
   dependencies:
     "@stencil/core" "^2.6.0"
 
-"@stacks/connect@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.npmjs.org/@stacks/connect/-/connect-6.2.0.tgz"
-  dependencies:
-    "@stacks/auth" "2.0.1"
-    "@stacks/connect-ui" "5.2.0"
-    "@stacks/network" "2.0.1"
-    "@stacks/prettier-config" "0.0.8"
-    "@stacks/transactions" "2.0.1"
-    bn.js "^5.2.0"
-    buffer "6.0.3"
-    jsontokens "^3.0.0"
-    readable-stream "^3.6.0"
-    url "^0.11.0"
-
-"@stacks/connect@^6.2.0":
+"@stacks/connect@6.2.0", "@stacks/connect@^6.2.0":
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/@stacks/connect/-/connect-6.2.0.tgz#d1e34524aa80149ceb9d312a3c8eb2d3e166d9df"
   dependencies:
