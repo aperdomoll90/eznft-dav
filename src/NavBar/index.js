@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
+import Avatar from '@mui/material/Avatar';
 import "./style.css";
 
 function NavBar() {
   return (
     <div class="header">
-      <NavLink to="/landing">Home</NavLink>
-      <NavLink to="/addartwork">Add Work</NavLink>
-      <NavLink to="/test">Buy Art</NavLink>
+      <NavLink to="/landing">
+        <Avatar src="/eznft-logo.png" alt="EZNFT Home" />
+      </NavLink>
     </div>
   );
 }
