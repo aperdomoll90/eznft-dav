@@ -1,6 +1,9 @@
+import { openContractCall } from '@stacks/connect';
+import { Button } from '@blockstack/ui';
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import Button from '@mui/material/Button'
+//import Button from '@mui/material/Button'
+
 import { uploadFile } from '../utils'
 import { ContentBox } from '../styles'
 import './style.css'
@@ -16,15 +19,35 @@ function AddArtwork() {
   }
 
   const handleSubmit = () => {
-    fetch(`https://eznft-api.web.app/artwork`, {
-    // fetch(`http://localhost:5000/artwork`, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      mode: 'no-cors',
-      body: JSON.stringify(newArt),
-    })
-      .then(() => history.push('/'))
-      .catch(err => console.log(err))
+      const functionArgs = [
+        ];
+        
+        const options = {
+          contractAddress: 'ST3VMN4221GKGGFV2WJHW64RGJNKP1Y00KPGVBZC8',
+          contractName: 'eznft-bocacode',
+          functionName: 'claim',
+          functionArgs,
+          appDetails: {
+            name: 'ez  NFT',
+            icon: window.location.origin + '/my-app-logo.svg',
+          },
+          onFinish: data => {
+              console.log("data",data);
+              fetch(`https://eznft-api.web.app/artwork`, {
+                // fetch(`http://localhost:5000/artwork`, {
+                  method: 'POST',
+                  headers: {'Content-Type': 'application/json'},
+                  mode: 'no-cors',
+                  body: JSON.stringify(newArt),
+                })
+                  .then(() => history.push('/'))
+                  .catch(err => console.log(err))
+          },
+        };
+        
+         openContractCall(options).then(answer =>  {
+             console.log("answer:",answer)
+         });
   }
 
   return (
@@ -56,6 +79,7 @@ function AddArtwork() {
           <Button variant="contained"
             size="large"
             color="warning"
+            className={"MuiButton-root MuiButton-contained MuiButton-containedWarning MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-zm37py-MuiButtonBase-root-MuiButton-root"}
            onClick={handleSubmit}>
             Create NFT</Button>
           </div>

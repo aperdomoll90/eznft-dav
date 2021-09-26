@@ -19,13 +19,6 @@ import {
 
 function Mint() {
     const functionArgs = [
-        // uintCV(1234),
-        // intCV(-234),
-        // bufferCV(Buffer.from('hello, world')),
-        // stringAsciiCV('hey-ascii'),
-        // stringUtf8CV('hey-utf8'),
-        // standardPrincipalCV('ST3VMN4221GKGGFV2WJHW64RGJNKP1Y00KPGVBZC8'),
-        // trueCV(),
       ];
       
       const options = {
@@ -39,9 +32,7 @@ function Mint() {
         },
         onFinish: data => {
             console.log("data",data)
-        //   console.log('Stacks Transaction:', data.stacksTransaction);
-        //   console.log('Transaction ID:', data.txId);
-        //   console.log('Raw transaction:', data.txRaw);
+
         },
       };
       
