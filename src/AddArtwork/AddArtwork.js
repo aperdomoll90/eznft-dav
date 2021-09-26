@@ -7,7 +7,6 @@ function AddArtwork() {
      const [newArt, setNewArt] = useState()
      const handleUpload = file => {
           uploadFile(file).then(photoUrl => {
-               setPhotoUrl(photoUrl)
                setNewArt({ ...newArt, photoUrl })
           })
      }
