@@ -1,6 +1,6 @@
 import { openContractCall } from '@stacks/connect';
 import { Button } from '@blockstack/ui';
-import { userSession } from '../auth';
+import { authenticate,userSession } from '../auth';
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 //import Button from '@mui/material/Button'
@@ -20,10 +20,7 @@ function AddArtwork() {
   }
 
   const handleSubmit = () => {
-    if  (!userSession?.isUserSignedIn()) {
-      alert("Please install the Hiro.so Wallet");
-      return;
-   }
+
       const functionArgs = [
         ];
         
@@ -81,12 +78,24 @@ function AddArtwork() {
           </div>
 
           <div class='buttonField'>
-          <Button variant="contained"
+          
+
+
+
+          {userSession?.isUserSignedIn() ? <Button variant="contained"
             size="large"
             color="warning"
             className={"MuiButton-root MuiButton-contained MuiButton-containedWarning MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-zm37py-MuiButtonBase-root-MuiButton-root"}
            onClick={handleSubmit}>
             Create NFT</Button>
+            :  
+            <Button onClick={() => authenticate()}>
+              Connect your Hiro  Wallet
+            </Button>
+        }
+
+
+
           </div>
         </section>
       </div>

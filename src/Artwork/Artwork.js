@@ -6,14 +6,11 @@ import { useParams } from "react-router-dom";
 import ArtCard from "../Components/ArtCard";
 import { ContentBox } from "../styles";
 import { uintCV } from '@stacks/transactions';
-import { userSession } from '../auth';
+import { authenticate,userSession } from '../auth';
 
 
 function BuyNFC(ArtID,NFTID) {
-  if  (!userSession?.isUserSignedIn()) {
-     alert("Please install the Hiro.so Wallet");
-     return;
-  }
+
   try  {
   console.log("Buy")
   const functionArgs = [
@@ -54,6 +51,7 @@ function BuyNFC(ArtID,NFTID) {
          console.log("answer:",answer)
      });
     } catch (ex) {
+      console.error(ex);
       alert("Please install Hiro.so wallet!")
     }
 }
@@ -76,12 +74,20 @@ function Artwork() {
         {artWorkById ? <ArtCard info={artWorkById} /> : <h2>Loading...</h2>}
       </div>
       <div>
-      <Button variant="contained"
+        
+      {userSession?.isUserSignedIn() ? <Button variant="contained"
             size="large"
             color="warning"
             className={"MuiButton-root MuiButton-contained MuiButton-containedWarning MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-zm37py-MuiButtonBase-root-MuiButton-root"}
-           onClick={BuyNFC(artWorkById,15)}>
-            Buy NFT</Button>
+           onClick={BuyNFC(artWorkById,15)()}>
+            BUY this NFT</Button>
+            :  
+            <Button onClick={() => authenticate()}>
+              Connect your Hiro  Wallet
+            </Button>
+        }
+
+
       </div>
     </ContentBox>
   );
