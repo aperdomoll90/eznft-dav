@@ -3,21 +3,20 @@ import { Button } from '@blockstack/ui';
 import { authenticate,userSession } from '../auth';
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-//import Button from '@mui/material/Button'
-
+// import Button from '@mui/material/Button'
 import { uploadFile } from '../utils'
 import { ContentBox } from '../styles'
 import './style.css'
 
 function AddArtwork() {
-  let history = useHistory()
-  const [newArt, setNewArt] = useState()
-  const handleUpload = (files) => {
-    console.log(files)
-    uploadFile(files[0]).then(photoUrl => {
-      setNewArt({ ...newArt, image_url: photoUrl })
-    })
-  }
+     let history = useHistory()
+     const [newArt, setNewArt] = useState()
+     const handleUpload = files => {
+          console.log(files)
+          uploadFile(files[0]).then(photoUrl => {
+               setNewArt({ ...newArt, image_url: photoUrl })
+          })
+     }
 
   const handleSubmit = () => {
 
@@ -52,41 +51,90 @@ function AddArtwork() {
          });
   }
 
-  return (
-    <ContentBox>
-      <div class='table'>
-        <section class='column'>
-          <div className='pictureRow'>
-            <input type='file' accept='image/*' onChange={e => handleUpload(e.target.files)} />
-          </div>
+     return (
+          <ContentBox>
+               <div className="table">
+                    <section className="column">
+                         <div className="pictureRow">
+                              <input
+                                   type="file"
+                                   accept="image/*"
+                                   onChange={e => handleUpload(e.target.files)}
+                              />
+                         </div>
+                    </section>
+                    <section className="column">
+                         <div className="infoField">
+                              <div className="tripleRow">
+                                   <input
+                                        className="mediumInput"
+                                        placeholder="  Name of the Piece"
+                                        onChange={e =>
+                                             setNewArt({
+                                                  ...newArt,
+                                                  art_name: e.target.value,
+                                             })
+                                        }
+                                   />
+                                   <input
+                                        className="smallInput"
+                                        placeholder="  Price"
+                                        onChange={e =>
+                                             setNewArt({
+                                                  ...newArt,
+                                                  price: e.target.value,
+                                             })
+                                        }
+                                   />
+                                   <input
+                                        className="smallInput"
+                                        placeholder="  Quantity"
+                                        onChange={e =>
+                                             setNewArt({
+                                                  ...newArt,
+                                                  quantity: e.target.value,
+                                             })
+                                        }
+                                   />
+                              </div>
+                              <div className="singleRow">
+                                   <input
+                                        className="largeInput"
+                                        placeholder="  Street Address"
+                                        onChange={e =>
+                                             setNewArt({
+                                                  ...newArt,
+                                                  location: e.target.value,
+                                             })
+                                        }
+                                   />
+                              </div>
+                         </div>
+                         <div className="infoField">
+                              <label>
+                                   Provide a description of the piece here:{' '}
+                              </label>
+                              <textarea
+                                   rows="30"
+                                   cols="80"
+                                   onChange={e =>
+                                        setNewArt({
+                                             ...newArt,
+                                             description: e.target.value,
+                                        })
+                                   }
+                                   className="descriptionTextarea"
+                              />
+                         </div>
+
+          <div className='buttonField'>
           
-        </section>
-        <section class='column'>
-          <div class='infoField'>
-            <div class='tripleRow'>
-              <input class='mediumInput' placeholder='  Name of the Piece' onChange={e => setNewArt({ ...newArt, art_name: e.target.value })} />
-              <input class='smallInput' placeholder='  Price' onChange={e => setNewArt({ ...newArt, price: e.target.value })} />
-              <input class='smallInput' placeholder='  Quantity' onChange={e => setNewArt({ ...newArt, quantity: e.target.value })} />
-            </div>
-            <div class='singleRow'>
-              <input class='largeInput' placeholder='  Street Address' onChange={e => setNewArt({ ...newArt, location: e.target.value })} />
-            </div>
-          </div>
-          <div class='infoField'>
-            <label>Provide a description of the piece here: </label>
-            <textarea rows='30' cols='80' onChange={e => setNewArt({ ...newArt, description: e.target.value })} class='descriptionTextarea' />
-          </div>
-
-          <div class='buttonField'>
-          
-
-
 
           {userSession?.isUserSignedIn() ? <Button variant="contained"
             size="large"
             color="warning"
             className={"MuiButton-root MuiButton-contained MuiButton-containedWarning MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-zm37py-MuiButtonBase-root-MuiButton-root"}
-           onClick={handleSubmit}>
+           onClick={() =>  handleSubmit}>
             Create NFT</Button>
             :  
             <Button onClick={() => authenticate()}>

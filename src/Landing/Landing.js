@@ -20,10 +20,10 @@ function Landing() {
 
   return (
     <ContentBox>
-      <div class='columnsLeft'>
-        <img class='homeImage' alt='' src={HomeImage}/>
+      <div className='columnsLeft'>
+        <img className='homeImage' alt='' src={HomeImage}/>
       </div>
-      <div class='columns'> {artWorkList && artWorkList.map(art => <ArtCard key={art.id} info={art} />)}</div>
+      <div className='columns'> {artWorkList && artWorkList.map(art => <ArtCard key={art.id} info={art} />)}</div>
 
       <Fab color="default" aria-label="add" onClick={() => history.push('/addartwork')}>
         <AddIcon />

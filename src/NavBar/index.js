@@ -4,7 +4,7 @@ import "./style.css";
 
 function NavBar() {
   return (
-    <div class="header">
+    <div className="header">
       <NavLink to="/landing">
         <Avatar src="/eznft-logo.png" alt="EZNFT Home" />
       </NavLink>
